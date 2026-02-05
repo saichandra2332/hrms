@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://kind-rejoicing-production-4dc9.up.railway.app"
+  baseURL: process.env.REACT_APP_API_URL
 });
 
 export default api;
