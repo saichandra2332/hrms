@@ -1,0 +1,29 @@
+:root {
+  --primary: #4f46e5;
+  --secondary: #06b6d4;
+  --danger: #ef4444;
+  --success: #22c55e;
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}

@@ -1,0 +1,48 @@
+button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button.primary {
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+  color: white;
+}
+
+button.primary:hover {
+  opacity: 0.9;
+}
+
+button.danger {
+  background: var(--danger);
+  color: white;
+}
+
+button.danger:hover {
+  opacity: 0.9;
+}
+
+/* ===== FORM ===== */
+.form {
+  display: grid;
+  gap: 14px;
+}
+
+.form input,
+.form select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.form input:focus,
+.form select:focus {
+  outline: none;
+  border-color: var(--primary);
+}

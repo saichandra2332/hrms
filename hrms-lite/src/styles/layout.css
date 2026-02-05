@@ -1,0 +1,119 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px;
+}
+
+/* ===== HEADER ===== */
+.top-header {
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-header strong {
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.nav-actions button {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: none;
+  margin-left: 10px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nav-actions button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  margin-bottom: 20px;
+}
+
+/* ===== CENTER TEXT ===== */
+.center {
+  text-align: center;
+  padding: 24px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ===== MODAL ===== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  width: 520px;
+  border-radius: 14px;
+  padding: 24px;
+}
+/* ===== DASHBOARD ===== */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.dashboard-card {
+  padding: 22px;
+  border-radius: 14px;
+  color: white;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card:nth-child(1) {
+  background: linear-gradient(135deg, #6366f1, #818cf8);
+}
+
+.dashboard-card:nth-child(2) {
+  background: linear-gradient(135deg, #06b6d4, #22d3ee);
+}
+
+.dashboard-card:nth-child(3) {
+  background: linear-gradient(135deg, #22c55e, #4ade80);
+}
+
+.dashboard-card h4 {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.dashboard-card p {
+  font-size: 32px;
+  font-weight: bold;
+}
