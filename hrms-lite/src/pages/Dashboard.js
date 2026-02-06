@@ -10,20 +10,32 @@ function Dashboard() {
 
   useEffect(() => {
     async function load() {
-      setLoading(true);
-      const [e, a] = await Promise.all([
-        api.get("/employees"),
-        api.get("/attendance")
-      ]);
-      setEmployees(e.data);
-      setAttendance(a.data);
-      setLoading(false);
+      try {
+        setLoading(true);
+
+        const [e, a] = await Promise.all([
+          api.get("/employees"),
+          api.get("/attendance")
+        ]);
+
+        // Ensure arrays
+        setEmployees(Array.isArray(e.data) ? e.data : []);
+        setAttendance(Array.isArray(a.data) ? a.data : []);
+      } catch (err) {
+        console.error("Dashboard load error:", err);
+        setEmployees([]);
+        setAttendance([]);
+      } finally {
+        setLoading(false);
+      }
     }
+
     load();
   }, []);
 
   const today = new Date().toISOString().split("T")[0];
-  const presentToday = attendance.filter(
+
+  const presentToday = (attendance || []).filter(
     a => a.date === today && a.status === "Present"
   ).length;
 
