@@ -25,6 +25,7 @@ function Attendance() {
   });
 
   async function fetchData() {
+  try {
     setLoading(true);
 
     const params = {};
@@ -36,10 +37,16 @@ function Attendance() {
       api.get("/attendance", { params })
     ]);
 
-    setEmployees(e.data);
-    setRecords(a.data);
+    setEmployees(Array.isArray(e.data) ? e.data : []);
+    setRecords(Array.isArray(a.data) ? a.data : []);
+  } catch (err) {
+    console.error("Attendance fetch error:", err);
+    setEmployees([]);
+    setRecords([]);
+  } finally {
     setLoading(false);
   }
+}
 
   useEffect(() => {
   fetchData();
