@@ -24,13 +24,22 @@ function Employees() {
   });
 
   async function fetchEmployees() {
+  try {
     setLoading(true);
+
     const res = await api.get("/employees", {
       params: search ? { search } : {}
     });
-    setEmployees(res.data);
+
+    setEmployees(Array.isArray(res.data) ? res.data : []);
+  } catch (err) {
+    console.error("Employees fetch error:", err);
+    setEmployees([]);
+  } finally {
     setLoading(false);
   }
+}
+
 
  useEffect(() => {
   fetchEmployees();
