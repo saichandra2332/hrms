@@ -42,8 +42,10 @@ function Attendance() {
   }
 
   useEffect(() => {
-    fetchData();
-  }, [filterEmployee, filterDate]);
+  fetchData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [filterEmployee, filterDate]);
+;
 
   async function addAttendance(e) {
     e.preventDefault();
