@@ -32,9 +32,10 @@ function Employees() {
     setLoading(false);
   }
 
-  useEffect(() => {
-    fetchEmployees();
-  }, [search]);
+ useEffect(() => {
+  fetchEmployees();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [search]);
 
   async function addEmployee(e) {
     e.preventDefault();
